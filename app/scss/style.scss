@@ -70,13 +70,13 @@ min-height: 533px;
     &-title{
         margin-bottom: 10px;
         font-size: 48px;
-        font-weight: 700;
+        @include f700;
         line-height: 72px;
     }
     &-text{
         margin-bottom: 50px;
         font-size: 20px;
-        font-weight: 500;
+        @include f500;
         line-height: 30px
     }
     &-form{
@@ -91,12 +91,12 @@ min-height: 533px;
             height: 56px;
             border: none;
             font-size: 14px;
-            font-weight: 500;
+            @include f500;
             padding-left: 24px;
             padding-right: 60px;
             &::placeholder{
                 color: #90a4ae;
-                font-weight: 500;
+                @include f500;
             }
         }
         button{
@@ -122,7 +122,7 @@ min-height: 533px;
         border: none;
         background-color: #fff;
         color: $bg;
-        font-weight: 500;
+        @include f500;
         font-size: 14px;
         cursor: pointer;
         & + button{
@@ -158,7 +158,7 @@ min-height: 533px;
         padding: 10px 30px;
         align-items: center;
         min-height: 90px;
-        font-weight: 500;
+        @include f500;
         border-bottom: 1px solid #e7ecf2;
     }
     &-name{
@@ -175,7 +175,7 @@ min-height: 533px;
         font-size: 18px;
     }
     &-price{
-        font-weight: 700;
+        @include f700;
         font-size: 20px;
         color: $bg;
     }
@@ -191,7 +191,7 @@ min-height: 533px;
         align-items: center;
         max-width: 245px;
         span{
-            font-weight: 500;
+            @include f500;
             font-size: 14px;
         }
         .avatar{
@@ -221,7 +221,7 @@ min-height: 533px;
         border: none;
         background-color: #fff;
         color: $bg;
-        font-weight: 500;
+        @include f500;
         font-size: 16px;
         box-shadow: 0px 1px 3px 0px rgba(204, 216, 228, 0.75);
         cursor: pointer;
@@ -263,9 +263,61 @@ min-height: 533px;
         outline: none;
       }
     }
-    
   }
-
-
-  
   //end products-slider
+  //start advantage
+.advantage{
+    max-height: 620px;
+    background-color: $bg;
+    padding: 110px 0px;
+}
+.advantage__title{
+    color: #fff;
+}
+.advantage__inner{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+}
+.advantage__item{
+    max-width: 370px;
+    text-align: center;
+    padding: 0 30px;
+    &:hover{
+        .advantage__item-images{
+            background-color: $green;
+            path,{
+                fill: #fff;
+            }
+        }
+        .advantage__item-title{
+            color: $green;
+        }
+       
+    }
+    &-images{
+        width: 114px;
+        height: 114px;
+        background-color: #fff;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 30px;
+        transition: all .3s;
+    }
+    &-title{
+        color: #fff;
+        @include f500;
+        font-size: 24px;
+        margin-bottom: 25px;
+        transition: all .3s;
+    }
+    &-text{
+        color: #b0bec5;
+        font-size: 15px;
+        // margin: 0 20px;
+    }
+}
+  //end advanyage
+  
