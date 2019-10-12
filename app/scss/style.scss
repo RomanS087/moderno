@@ -320,4 +320,44 @@ min-height: 533px;
     }
 }
   //end advanyage
+  //start author
+  .author {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      min-height: 750px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &__box{
+          min-height: 215px;
+          max-width: 650px;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: $green;
+      }
+      &__title{
+        font-size: 30px;
+        line-height: 30px;  
+        color: #fff;
+        margin-right: 45px;
+        max-width: 260px;
+        span{
+            @include f700;
+        }
+      }
+      &__link{
+          font-size: 18px;
+          color: $bg;
+          background-color: #fff;
+          line-height: 36px;
+          padding: 14px 42px;
+          
+      }
+  }
+
+
+    //end author
   
