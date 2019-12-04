@@ -34,12 +34,19 @@ $(function(){
     $('.icon-th-large').addClass('active');
     $('.icon-th-list').removeClass('active');
   });
-  
+
+  $('.menu__btn').on('click', function(){
+    $('.menu__list').slideToggle();
+  }); 
+  $('.header__btn-menu').on('click', function(){
+    $('.header__box').toggleClass('active');
+  }); 
+  $('.multiple-items').slick({
+    slidesToShow: 3, //сколько слайдов показывать в карусели
+    slidesToScroll: 3 // сколько слайдов прокручивать за раз
+  });
   var mixer = mixitup('.products__inner-box');
+  
     
-});
-$('.multiple-items').slick({
-  slidesToShow: 3, //сколько слайдов показывать в карусели
-  slidesToScroll: 3 // сколько слайдов прокручивать за раз
 });
 

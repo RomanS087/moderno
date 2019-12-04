@@ -3,11 +3,15 @@
 @import 'fonts';
 
 //star header
+.header{
+    background-color: #fff;
+}
 .header__top-inner{
     display: flex;
     justify-content: space-between;
     height: 90px;
      align-items: center; //выравнивает все по центру  в хедаре
+    
 }
 .header__text{
     margin-left: auto; //до этого текст был по середине, теперь он отталкнуля от левого элемента максимум до следующего
@@ -27,7 +31,8 @@
 .header__btn-login{
     background-color: $green;
 }
-.header__btn-register{
+.header__btn-register,
+.header__btn-logout{
     background-color: $red;
     margin-left: 7px;
 }
@@ -50,9 +55,263 @@
     a{
         font-size: 400;
         color: #fff;
+    }  
+}
+.header__circle{
+    &.active{
+        display: block;
     }
+    display: none;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    position: relative;
+    &::before{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #a0a0a0;
+        font-size: 14px;
+    }
+    span{
+        position: absolute;
+        height: 18px;
+        width: 18px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 18px;
+        right: -7px;
+        top: -7px;
+        font-size: 11px;
+        color: #fff;
+    }
+}
+.header__box{
+    display: flex;
+    align-items: center;
+}
+.notification{
+    span{
+        background-color: $yellow;
+    }
+}
+.message{
+    span{
+        background-color: $tomato;
+    }
+}
+.basket{
+    margin-right: 20px;
+    span{
+        background-color: $green;
+    }
+}
+.header__btn-login--off{
+    display: none;
+}
+.header__btn-logout{
+    display: none;
+    &.header__btn-login--on{
+        display: block;
+    }
+}
+.user{
+    margin-right: 25px;
+    padding-right: 20px;
+    position: relative;
+    &::before{
+        content:"\f107";
+        position: absolute;
+        font-family: 'icomoon';
+        font-size: 16px;
+        color: #707070;
+        top: 0;
+        right: 0;
+    }
+    &__inner{
+        display: flex;
+        align-items: center;
+    }
+    &__images{
+        margin-right: 15px;
+        width: 34px;
+        height: 34px;
+        overflow: hidden;
+        border-radius: 50% ;
+    }
+    &__info{
+        font-size: 14px;
+        line-height: 24px;
+    }
+    &__name{
+        @include f500;
+        color: #222222;
+    }
+    &__money{
+        color: $green;
+        @include f700;
+    }
+}
+.user__menu{
+    top: 69px;
+    left: 20px;
+    border: 0px solid #cccccc;
+    position: absolute;
+    background-color: #fff;
+    padding: 0 20px;
+    width: 158px;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+    height: 0;
+    overflow: hidden;
+    a{
+        font-size: 12px;
+        color: #546e7a;
+        margin-bottom: 15px;
+    }
+}
+.user__box,
+.basket__box,
+.notification__box,
+.message__box{
+    position: relative;
+    height: 90px;
+    margin-top: 40px;
+    &:hover{
+        .user__menu{
+         height: auto;
+         border-width: 1px;
+         padding: 20px;
+         overflow: auto;
+        }
+    }
+}
+.circle__menu{    //блок отвечает за выпадающую менюху при наведении не значек карзины
+    right: 0px;
+    position: absolute;
+    top: 62px;
+    border-top: 1px solid #e0e0e0;
+    z-index: 1;
+    height: 0;
+    overflow: hidden;
+
     
 }
+.basket__box,
+.notification__box,
+.message__box{
+    margin-top: 54px;
+    margin-left: 15px;
+    &:hover{
+        .header__circle::before{
+            color: $bg;
+        }
+        .circle__menu{
+            height: auto;
+            overflow: auto;
+        }
+        .circle__item{
+            padding: 23px;
+            border-width: 1px;
+        } 
+    }
+}
+
+
+.circle__item{
+    transition: all .3s;
+    background-color: #fff;
+    border: 0px solid #e0e0e0;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top: none;
+    padding: 0 23px;
+    display: flex;
+    align-items: center;
+    width: 269px;
+    position: relative;
+    &::before{
+        position: absolute;
+        top: 27px;
+        right: 28px;
+        font-size: 16px;
+        color: #b0bec5;
+    }
+}
+.circle__images{
+    margin-right: 15px;
+}
+.circle__info-name{
+ @include f500;
+ color: $bg;
+}
+.circle__info-theam{
+ font-size: 12px;
+ color: $green;
+ }
+
+.circle__info-price{
+  @include f500;
+  color: #000;
+  font-size: 16px;
+}
+.circle__info-date{
+    font-size: 10px;
+    color: #707070;
+}
+.basket__summ{
+    background-color: #fff;
+    padding: 16px 17px 12px;
+    border: 1px solid #e0e0e0;
+    border-top: none;
+}
+.basket__title{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 13px;
+    padding-right: 22px;
+    margin-bottom: 15px;
+    @include f700;
+    font-size: 16px;
+    color: $bg;
+}
+.basket__btn{
+    width: 100px;
+    background-color: $green;
+    font-size: 14px;
+    @include f700;
+    color: #fff;
+    padding: 12px 5px;
+    text-align: center; 
+}
+.basket__checkout{
+    width: 120px;
+    margin-left: 6px;
+    background-color: $red;
+}
+.notification__menu,
+.message__menu{
+    .circle__images{
+        margin-right: 20px;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+    }
+    .circle__info{
+        line-height: 18px;
+    }
+}
+.icons-color::before{
+    color: $tomato;
+}
+.header__btn-menu,
+.menu__btn{
+    display: none;
+}
+  
 //end header
 
 //start search
@@ -289,7 +548,7 @@ min-height: 533px;
 }
 .advantage__item{
     max-width: 370px;
-    text-align: center;
+    text-align: center; 
     padding: 0 30px;
     &:hover{
         .advantage__item-images{
@@ -799,9 +1058,7 @@ button.icon-unsorted{
     margin-bottom: 30px;
     flex-wrap: wrap;
 }
-.pagination{
 
-}
 .pagination__list{
     li{
         display: inline-block;
@@ -912,5 +1169,8 @@ button.icon-unsorted{
   
 // end product-page
 
-    
-    
+
+
+
+
+@import 'media';
