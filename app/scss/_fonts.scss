@@ -5,6 +5,13 @@
     font-weight: 400;
    font-display: swap;   //когда заходишь на сайт, отображаются системными шрифтами,Ю пока не подгрузятся установленные
 }
+@font-face{
+  font-family: 'Roboto-Regular', sans-serif;
+  src: url('../fonts/Roboto-Regular.woff2') format('woff2'),
+       url('../fonts/Roboto-Regular.woff') format('woff');
+  font-weight: 400;
+ font-display: swap;   //когда заходишь на сайт, отображаются системными шрифтами,Ю пока не подгрузятся установленные
+}
 @font-face {
      font-family: 'icomoon';
      src:  url('../fonts/icomoon.eot?ujauz2');
@@ -109,7 +116,7 @@
   .icon-unsorted:before {
     content: "\f0dc";
   }
-  .icon-linkedin:before {
+  .icon-twitter:before {
     content: "\f0e1";
   }
   .icon-comment-o:before {
